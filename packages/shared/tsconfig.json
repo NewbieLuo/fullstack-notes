@@ -1,5 +1,5 @@
 {
-  "extends": "@fullstack-notes/config/tsconfig/node.json",
+  "extends": "@fullstack-notes/config/tsconfig/base.json",
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "."
