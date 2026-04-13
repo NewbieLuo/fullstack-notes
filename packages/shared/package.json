@@ -1,0 +1,25 @@
+{
+  "name": "@fullstack-notes/shared",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@fullstack-notes/config": "workspace:*",
+    "@biomejs/biome": "^1.9.4",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
