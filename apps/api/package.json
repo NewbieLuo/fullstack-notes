@@ -10,7 +10,6 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@fullstack-notes/shared": "workspace:*",
     "@hono/node-server": "^1.13.0",
     "@supabase/supabase-js": "^2.45.0",
     "hono": "^4.6.0",

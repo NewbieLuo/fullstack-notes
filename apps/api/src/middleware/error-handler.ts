@@ -1,7 +1,7 @@
-import { ErrorCodes } from '@fullstack-notes/shared';
 import type { Context } from 'hono';
 import { HTTPException } from 'hono/http-exception';
 import { ZodError } from 'zod';
+import { ErrorCodes } from '../lib/schemas.js';
 
 export function errorHandler(err: Error, c: Context) {
   if (err instanceof ZodError) {
