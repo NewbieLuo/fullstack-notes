@@ -38,7 +38,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm turbo run build --filter=@fullstack-notes/web
         env:
-          NEXT_PUBLIC_API_BASE_URL: https://fullstack-notes-api-newbieluos-projects.vercel.app
+          NEXT_PUBLIC_API_BASE_URL: https://fullstack-notes-api.vercel.app
       - uses: actions/upload-pages-artifact@v3
         with:
           path: apps/web/out

@@ -1,6 +1,6 @@
 import { serve } from '@hono/node-server';
-import { app } from './app';
-import { loadEnv } from './lib/env';
+import { app } from './app.js';
+import { loadEnv } from './lib/env.js';
 
 const env = loadEnv();
 

@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { app } from '../src/app';
-import { __setSupabaseClient } from '../src/lib/supabase';
+import { app } from '../src/app.js';
+import { __setSupabaseClient } from '../src/lib/supabase.js';
 
 type MockChain = {
   select: ReturnType<typeof vi.fn>;

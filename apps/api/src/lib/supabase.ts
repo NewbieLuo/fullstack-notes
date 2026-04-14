@@ -1,5 +1,5 @@
 import { type SupabaseClient, createClient } from '@supabase/supabase-js';
-import { loadEnv } from './env';
+import { loadEnv } from './env.js';
 
 let cachedClient: SupabaseClient | null = null;
 

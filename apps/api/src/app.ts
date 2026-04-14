@@ -1,8 +1,8 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
-import { loadEnv } from './lib/env';
-import { errorHandler } from './middleware/error-handler';
-import { notesRoute } from './routes/notes';
+import { loadEnv } from './lib/env.js';
+import { errorHandler } from './middleware/error-handler.js';
+import { notesRoute } from './routes/notes.js';
 
 export const app = new Hono();
 

@@ -11,7 +11,7 @@ AI-native 随堂作业：monorepo + 前后端分离 + Supabase + GitHub CI/CD �
 
 ## URLs
 - 前端: https://newbieluo.github.io/fullstack-notes/
-- 后端: https://fullstack-notes-api-newbieluos-projects.vercel.app
+- 后端: https://fullstack-notes-api.vercel.app
 
 ## Local Dev
 见 DEPLOYMENT.md
