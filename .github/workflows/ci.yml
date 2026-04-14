@@ -70,5 +70,5 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID_API }}
-          working-directory: ./apps/api
+          working-directory: ./
           vercel-args: '--prod'
