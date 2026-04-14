@@ -18,5 +18,11 @@
     "@biomejs/biome": "^1.9.4",
     "turbo": "^2.1.0",
     "typescript": "^5.6.0"
+  },
+  "pnpm": {
+    "supportedArchitectures": {
+      "os": ["current", "linux", "win32"],
+      "cpu": ["current", "x64", "arm64"]
+    }
   }
 }
