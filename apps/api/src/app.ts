@@ -1,24 +1,25 @@
 import { Hono } from 'hono';
-import { cors } from 'hono/cors';
-import { loadEnv } from './lib/env.js';
 import { errorHandler } from './middleware/error-handler.js';
 import { notesRoute } from './routes/notes.js';
 
-const env = loadEnv();
-const allowedOrigins = env.ALLOWED_ORIGINS.split(',').map((s) => s.trim());
+console.log('[api] module loaded');
 
 export const app = new Hono();
 
-app.use(
-  '*',
-  cors({
-    origin: allowedOrigins,
-    allowMethods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowHeaders: ['Content-Type'],
-  }),
-);
+app.use('*', async (c, next) => {
+  const origin = c.req.header('Origin') ?? '*';
+  c.header('Access-Control-Allow-Origin', origin);
+  c.header('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE,OPTIONS');
+  c.header('Access-Control-Allow-Headers', 'Content-Type');
+  c.header('Access-Control-Max-Age', '86400');
+  c.header('Vary', 'Origin');
+  if (c.req.method === 'OPTIONS') {
+    return c.body(null, 204);
+  }
+  await next();
+});
 
-app.get('/api/health', (c) => c.json({ ok: true }));
+app.get('/api/health', (c) => c.json({ ok: true, t: Date.now() }));
 app.route('/api/notes', notesRoute);
 
 app.onError(errorHandler);

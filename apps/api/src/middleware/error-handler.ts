@@ -4,6 +4,15 @@ import { HTTPException } from 'hono/http-exception';
 import { ZodError } from 'zod';
 
 export function errorHandler(err: Error, c: Context) {
+  console.error(
+    '[api] error',
+    err?.name,
+    '|',
+    err?.message,
+    '|',
+    err?.stack?.split('\n').slice(0, 3).join(' // '),
+  );
+
   if (err instanceof ZodError) {
     return c.json(
       {
@@ -24,9 +33,11 @@ export function errorHandler(err: Error, c: Context) {
       err.status,
     );
   }
-  console.error('[api] unhandled error:', err);
   return c.json(
-    { error: ErrorCodes.INTERNAL_ERROR, message: 'Internal server error' },
+    {
+      error: ErrorCodes.INTERNAL_ERROR,
+      message: err?.message ?? 'Internal server error',
+    },
     500,
   );
 }
