@@ -48,17 +48,19 @@ const ErrorCodes = {
 } as const;
 
 // ---------- app ----------
+const env = loadEnv();
+const allowedOrigins = env.ALLOWED_ORIGINS.split(',').map((s) => s.trim());
+
 const app = new Hono();
 
-app.use('*', async (c, next) => {
-  const env = loadEnv();
-  const origins = env.ALLOWED_ORIGINS.split(',').map((s) => s.trim());
-  return cors({
-    origin: origins,
+app.use(
+  '*',
+  cors({
+    origin: allowedOrigins,
     allowMethods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
     allowHeaders: ['Content-Type'],
-  })(c, next);
-});
+  }),
+);
 
 app.get('/api/health', (c) => c.json({ ok: true }));
 
