@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/dev-server.ts",
-    "build": "tsc",
     "lint": "biome check .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"
