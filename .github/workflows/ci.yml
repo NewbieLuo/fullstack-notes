@@ -69,19 +69,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
-      - run: rm -f pnpm-lock.yaml && pnpm install
-        env:
-          npm_config_registry: https://registry.npmjs.org/
-      - run: pnpm turbo run build --filter=@fullstack-notes/api
-      - uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID_API }}
-          working-directory: ./apps/api/dist
-          vercel-args: '--prod'
+      - name: Link Vercel project
+        run: |
+          mkdir -p apps/api/.vercel
+          cat > apps/api/.vercel/project.json <<EOF
+          {"projectId":"${{ secrets.VERCEL_PROJECT_ID_API }}","orgId":"${{ secrets.VERCEL_ORG_ID }}"}
+          EOF
+      - name: Deploy to Vercel
+        working-directory: ./apps/api
+        run: npx -y vercel@latest deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN }}

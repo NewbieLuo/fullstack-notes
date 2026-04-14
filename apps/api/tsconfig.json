@@ -1,8 +1,4 @@
 {
   "extends": "@fullstack-notes/config/tsconfig/node.json",
-  "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "."
-  },
-  "include": ["src/**/*", "api/**/*", "__tests__/**/*"]
+  "include": ["src/**/*", "__tests__/**/*"]
 }
