@@ -77,7 +77,7 @@ jobs:
       - run: rm -f pnpm-lock.yaml && pnpm install
         env:
           npm_config_registry: https://registry.npmjs.org/
-      - run: pnpm --filter @fullstack-notes/api build
+      - run: pnpm turbo run build --filter=@fullstack-notes/api
       - uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
