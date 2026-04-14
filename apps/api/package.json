@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/dev-server.ts",
+    "build": "tsup",
     "lint": "biome check .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"
@@ -20,6 +21,7 @@
     "@fullstack-notes/config": "workspace:*",
     "@biomejs/biome": "^1.9.4",
     "@types/node": "^20.16.0",
+    "tsup": "^8.3.0",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0",
     "vitest": "^2.1.0"
