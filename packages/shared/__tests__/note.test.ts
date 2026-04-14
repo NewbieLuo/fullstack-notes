@@ -3,7 +3,7 @@ import {
   NoteCreateSchema,
   NoteSchema,
   NoteUpdateSchema,
-} from '../src/schemas/note';
+} from '../src/schemas/note.js';
 
 describe('NoteSchema', () => {
   it('accepts a valid note', () => {

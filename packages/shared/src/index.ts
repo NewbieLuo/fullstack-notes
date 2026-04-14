@@ -1,2 +1,2 @@
-export * from './schemas/note';
-export * from './errors';
+export * from './schemas/note.js';
+export * from './errors.js';
