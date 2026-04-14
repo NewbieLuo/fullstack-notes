@@ -2,7 +2,7 @@
   "version": 2,
   "framework": null,
   "outputDirectory": ".",
-  "installCommand": "NPM_CONFIG_REGISTRY=https://registry.npmjs.org/ pnpm install --no-frozen-lockfile",
+  "installCommand": "rm -f pnpm-lock.yaml ../../pnpm-lock.yaml && NPM_CONFIG_REGISTRY=https://registry.npmjs.org/ pnpm install",
   "buildCommand": "pnpm --filter @fullstack-notes/shared build",
   "functions": {
     "api/[[...route]].ts": {

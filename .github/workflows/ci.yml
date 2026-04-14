@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: 20
           cache: pnpm
-      - run: pnpm install --no-frozen-lockfile
+      - run: rm -f pnpm-lock.yaml && pnpm install
         env:
           npm_config_registry: https://registry.npmjs.org/
       - run: pnpm turbo run typecheck test
@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: 20
           cache: pnpm
-      - run: pnpm install --no-frozen-lockfile
+      - run: rm -f pnpm-lock.yaml && pnpm install
         env:
           npm_config_registry: https://registry.npmjs.org/
       - run: pnpm turbo run build --filter=@fullstack-notes/web
