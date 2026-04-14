@@ -36,9 +36,6 @@ importers:
       '@biomejs/biome':
         specifier: ^1.9.4
         version: 1.9.4
-      '@fullstack-notes/config':
-        specifier: workspace:*
-        version: link:../../packages/config
       '@types/node':
         specifier: ^20.16.0
         version: 20.19.39
@@ -1375,7 +1372,7 @@ packages:
     engines: {node: '>= 0.4'}
 
   hono@4.12.12:
-    resolution: {integrity: sha512-p1JfQMKaceuCbpJKAPKVqyqviZdS0eUxH9v82oWo1kb9xjQ5wA6iP3FNVAPDFlz5/p7d45lO+BpSk1tuSZMF4Q==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/hono/-/hono-4.12.12.tgz}
+    resolution: {integrity: sha512-p1JfQMKaceuCbpJKAPKVqyqviZdS0eUxH9v82oWo1kb9xjQ5wA6iP3FNVAPDFlz5/p7d45lO+BpSk1tuSZMF4Q==}
     engines: {node: '>=16.9.0'}
 
   iceberg-js@0.8.1:
